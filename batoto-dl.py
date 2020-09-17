@@ -77,7 +77,7 @@ def download_chapter(URL: str, is_cbz: bool=False) -> None:
     # Find all link of panel images
     imglist = \
         findall(
-            (r"https://file-comic-2-2.anyacg.co/images/" +
+            (r"https://z-img-04.bato.to/images/" +
                 r"[0-9a-zA-Z]+/[0-9a-zA-Z]+/" +
                 r"[0-9a-zA-Z_]+.[a-z]+").encode("utf-8"),
             page)
@@ -147,7 +147,6 @@ def download_series(URL: str, is_cbz: bool=False) -> None:
     hreflist = hreflist[::-1]
     for i in hreflist:
         download_chapter(i, is_cbz)
-
 
 def main() -> None:
     parser = ArgumentParser(description="Download Manga from Bato.to URL")
